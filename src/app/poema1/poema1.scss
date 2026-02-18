@@ -1,80 +1,109 @@
 /* =========================
+   VARIÁVEIS DO POEMA
+========================= */
+$cor-card: #fbf8f2;
+$cor-destaque: #b89c6d;
+$cor-subtitulo: #8a7b6a;
+$cor-menu-hover: #6f5f50;
+
+/* =========================
    ÁREA DO POEMA
 ========================= */
-
 .poema-container {
     min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
+
+    .poema-card {
+        background-color: $cor-card;
+        max-width: 720px;
+        width: 100%;
+        padding: 60px 50px;
+        border-radius: 6px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        position: relative;
+
+        /* Linha decorativa estilo livro */
+        &::before {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: $cor-destaque;
+            margin: 0 auto 30px auto;
+        }
+    }
 }
 
-.poema-card {
-    background-color: var(--cor-card);
-    max-width: 720px;
-    width: 100%;
-    padding: 60px 50px;
-    border-radius: 6px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    position: relative;
-}
-
-/* Linha decorativa estilo livro */
-.poema-card::before {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 2px;
-    background-color: var(--cor-destaque);
-    margin: 0 auto 30px auto;
-}
-
-/* Cabeçalho */
+/* =========================
+   CABEÇALHO
+========================= */
 .poema-header {
     text-align: center;
     margin-bottom: 40px;
+
+    .poema-titulo {
+        font-size: 26px;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+    }
+
+    .poema-subtitulo {
+        font-size: 14px;
+        font-style: italic;
+        color: $cor-subtitulo;
+    }
 }
 
-.poema-titulo {
-    font-size: 26px;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
+/* =========================
+   CORPO
+========================= */
+.poema-corpo {
+    p {
+        font-size: 18px;
+        line-height: 1.9;
+        text-align: center;
+        margin-bottom: 28px;
+    }
 }
 
-.poema-subtitulo {
-    font-size: 14px;
-    font-style: italic;
-    color: var(--cor-subtitulo);
-}
-
-/* Corpo */
-.poema-corpo p {
-    font-size: 18px;
-    line-height: 1.9;
-    text-align: center;
-    margin-bottom: 28px;
-}
-
-/* Assinatura */
+/* =========================
+   ASSINATURA
+========================= */
 .poema-rodape {
     text-align: right;
     margin-top: 40px;
     font-style: italic;
-    color: var(--cor-menu-hover);
+    color: $cor-menu-hover;
 }
 
-/* Responsividade */
+/* =========================
+   RESPONSIVIDADE
+   (mantendo a mesma cadeia de seletores)
+========================= */
 @media (max-width: 600px) {
-    .poema-card {
-        padding: 40px 25px;
+    .poema-container {
+        padding: 28px 14px;
+
+        .poema-card {
+            padding: 40px 25px;
+        }
     }
 
-    .poema-titulo {
-        font-size: 22px;
+    .poema-header {
+        margin-bottom: 28px;
+
+        .poema-titulo {
+            font-size: 22px;
+        }
     }
 
-    .poema-corpo p {
-        font-size: 16px;
+    .poema-corpo {
+        p {
+            font-size: 16px;
+            margin-bottom: 22px;
+        }
     }
 }

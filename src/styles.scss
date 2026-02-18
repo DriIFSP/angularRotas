@@ -1,89 +1,96 @@
-/* =========================
-   VARIÁVEIS GLOBAIS
-========================= */
-:root {
-    --cor-fundo: #f4efe6;
-    --cor-card: #fbf8f2;
-    --cor-texto: #3d342c;
-    --cor-subtitulo: #8a7b6a;
-    --cor-destaque: #b89c6d;
-    --cor-menu-hover: #6f5f50;
-}
+   /*VARIÁVEIS SCSS=========================*/
+   $cor-fundo: #f4efe6;
+   $cor-gradiente-final: #efe7da;
+   $cor-card: #fbf8f2;
+   $cor-texto: #3d342c;
+   $cor-subtitulo: #8a7b6a;
+   $cor-destaque: #b89c6d;
+   $cor-menu-hover: #6f5f50;
 
-/* =========================
+   $fonte-base: 'Georgia', 'Times New Roman', serif;
+
+   /* =========================
    RESET BÁSICO
 ========================= */
-* {
-    box-sizing: border-box;
-}
 
-body {
-    margin: 0;
-    background: linear-gradient(180deg, #f4efe6 0%, #efe7da 100%);
-    font-family: 'Georgia', 'Times New Roman', serif;
-    color: var(--cor-texto);
-}
+   * {
+       box-sizing: border-box;
+   }
 
-/* =========================
+   /* =========================
+   BASE GLOBAL
+========================= */
+
+   body {
+       margin: 0;
+       background: linear-gradient(180deg, $cor-fundo 0%, $cor-gradiente-final 100%);
+       font-family: $fonte-base;
+       color: $cor-texto;
+   }
+
+   /* =========================
    ESTRUTURA BASE
 ========================= */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-}
 
-/* =========================
+   .container {
+       max-width: 1100px;
+       margin: 0 auto;
+       padding: 20px;
+   }
+
+   /* =========================
    HEADER / MENU
 ========================= */
-.topo {
-    text-align: center;
-    padding: 40px 20px 20px 20px;
-}
 
-.topo h1 {
-    font-size: 32px;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-}
+   .topo {
+       text-align: center;
+       padding: 40px 20px 20px 20px;
 
-.subtitulo {
-    font-style: italic;
-    color: var(--cor-subtitulo);
-    margin-bottom: 25px;
-}
+       h1 {
+           font-size: 32px;
+           letter-spacing: 2px;
+           margin-bottom: 5px;
+       }
+   }
 
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
+   .subtitulo {
+       font-style: italic;
+       color: $cor-subtitulo;
+       margin-bottom: 25px;
+   }
 
-.menu a {
-    text-decoration: none;
-    color: var(--cor-texto);
-    font-size: 16px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid transparent;
-    transition: 0.3s ease;
-}
+   .menu {
+       display: flex;
+       justify-content: center;
+       gap: 30px;
 
-.menu a:hover {
-    color: var(--cor-menu-hover);
-    border-bottom: 1px solid var(--cor-destaque);
-}
+       a {
+           text-decoration: none;
+           color: $cor-texto;
+           font-size: 16px;
+           padding-bottom: 5px;
+           border-bottom: 1px solid transparent;
+           transition: 0.3s ease;
 
-.menu a.ativo {
-    border-bottom: 2px solid var(--cor-destaque);
-    font-weight: bold;
-}
+           &:hover {
+               color: $cor-menu-hover;
+               border-bottom: 1px solid $cor-destaque;
+           }
 
-/* =========================
+           &.ativo {
+               border-bottom: 2px solid $cor-destaque;
+               font-weight: bold;
+           }
+       }
+   }
+
+   /* =========================
    RODAPÉ
 ========================= */
-.rodape {
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 14px;
-    color: var(--cor-subtitulo);
-}
+
+   .rodape {
+       text-align: center;
+       padding: 40px 20px;
+       font-size: 14px;
+       color: $cor-subtitulo;
+   }
