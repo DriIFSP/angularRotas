@@ -4,8 +4,8 @@ import { Poema2 } from './poema2/poema2';
 
 
 export const routes: Routes = [
+    { path: '', redirectTo: 'poema1', pathMatch: 'full' },
     { path: 'poema1', component: Poema1 },
     { path: 'poema2', component: Poema2 },
-    { path: '', redirectTo: 'poema1', pathMatch: 'full' },
     { path: '**', redirectTo: 'poema1' }
 ];
